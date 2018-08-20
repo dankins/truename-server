@@ -37,25 +37,11 @@ func main() {
 		DGraph:     data.NewClient(),
 	}
 
+	//identityService.DeployIdentityFactory()
+
 	var schema = graphql.BuildSchema(&identityService)
 
 	http.Handle("/graphql", &graphql.Handler{Schema: schema})
 	log.Fatal(http.ListenAndServe(":1337", nil))
-
-	// http.HandleFunc("/getFactoryAddress", func(w http.ResponseWriter, r *http.Request) {
-	// 	fmt.Fprintf(w, factoryAddress.String())
-	// })
-
-	// http.HandleFunc("/getIdentityForAccount", func(w http.ResponseWriter, r *http.Request) {
-	// 	identityFactory, err := contracts.NewIdentityFactory(factoryAddress, blockchain)
-	// 	if err != nil || identityFactory == nil {
-	// 		log.Fatalf("Could not connect to IdentityFactory contract: %v", err)
-	// 	}
-
-	// 	var _account = common.HexToAddress("ca968fc767ef6820bdb92e13fae39174a80b94b7")
-	// 	identityContract, err := identityFactory.GetIdentityForAccount(&bind.CallOpts{}, _account)
-
-	// 	fmt.Fprintf(w, "fuck yea 0x%x", identityContract)
-	// })
 
 }

@@ -9,6 +9,7 @@ pragma solidity ^0.4.23;
  * TODO Remove this library once solidity supports passing a signature to ecrecover.
  * See https://github.com/ethereum/solidity/issues/864
  *
+ * https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/ECRecovery.sol
  */
 
 library ECRecovery {
@@ -31,7 +32,6 @@ library ECRecovery {
         if (sig.length != 65) {
             return (address(0));
         }
-
         // Divide the signature in r, s and v variables
         // ecrecover takes the signature parameters, and the only way to get them
         // currently is to use assembly.
@@ -51,7 +51,7 @@ library ECRecovery {
         if (v != 27 && v != 28) {
             return (address(0));
         } else {
-        // solium-disable-next-line arg-overflow
+            // solium-disable-next-line arg-overflow
             return ecrecover(hash, v, r, s);
         }
     }

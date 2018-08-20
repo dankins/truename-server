@@ -30,21 +30,41 @@
   revision = "71e4b7ed50eac8be08c25ff502be0701480f65d0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/edsrzf/mmap-go"
+  packages = ["."]
+  revision = "0bce6a6887123b67a60366d2c9fe2dfb74289d2e"
+
+[[projects]]
   name = "github.com/ethereum/go-ethereum"
   packages = [
     ".",
     "accounts",
     "accounts/abi",
     "accounts/abi/bind",
+    "accounts/abi/bind/backends",
     "accounts/keystore",
     "common",
+    "common/bitutil",
     "common/hexutil",
     "common/math",
     "common/mclock",
+    "consensus",
+    "consensus/ethash",
+    "consensus/misc",
+    "core",
+    "core/bloombits",
+    "core/rawdb",
+    "core/state",
     "core/types",
+    "core/vm",
     "crypto",
+    "crypto/bn256",
+    "crypto/bn256/cloudflare",
+    "crypto/bn256/google",
     "crypto/secp256k1",
     "crypto/sha3",
+    "eth/filters",
     "ethclient",
     "ethdb",
     "event",
@@ -110,6 +130,15 @@
   revision = "94da0f0031f9d30a1d56cd4b56e40852516c3301"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/hashicorp/golang-lru"
+  packages = [
+    ".",
+    "simplelru"
+  ]
+  revision = "0fb14efe8c47ae851c0034ed7a448854d3d34cf3"
+
+[[projects]]
   name = "github.com/opentracing/opentracing-go"
   packages = [
     ".",
@@ -167,6 +196,7 @@
   name = "golang.org/x/crypto"
   packages = [
     "pbkdf2",
+    "ripemd160",
     "scrypt"
   ]
   revision = "de0752318171da717af4ce24d0a2e8626afaeb11"
@@ -277,6 +307,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "1e5ffe5adb3bc4cb99acabbf63d659defa1aa26ce9fc18e021dbdda66cb5799a"
+  inputs-digest = "f7faa4709cc2201b7aa77590e5e3c3f107297f26bf871739f0b3acc263d8e598"
   solver-name = "gps-cdcl"
   solver-version = 1
